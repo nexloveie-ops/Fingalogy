@@ -1,0 +1,7 @@
+.git
+.gitignore
+.kiro
+README.md
+node_modules
+*.md
+.DS_Store
