@@ -1,173 +1,323 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fingalogy Limited - IT and Electronics Services, Battery and Energy Storage After-Sales Services in Dublin, Ireland">
-    <title>Fingalogy Limited - Green Energy Solutions</title>
+    <meta name="description" content="Fingalogy Limited - Leading IT, Electronics & Energy Storage Solutions in Dublin, Ireland">
+    <title>Fingalogy Limited | Technology & Energy Solutions</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav id="navbar" class="navbar">
-        <div class="container">
+    <!-- Animated Background Layers -->
+    <div class="bg-layer bg-gradient"></div>
+    <div class="bg-layer bg-grid"></div>
+    <canvas id="particle-canvas" class="bg-layer"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
             <div class="nav-brand">
-                <h1>FINGALOGY</h1>
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">FINGALOGY</span>
             </div>
-            <button class="nav-toggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">About Us</a></li>
-                <li><a href="#why-choose" class="nav-link">Why Choose Us</a></li>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#stats" class="nav-link">Impact</a></li>
                 <li><a href="#partners" class="nav-link">Partners</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#contact" class="nav-link btn-nav">Contact Us</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <canvas id="particle-canvas"></canvas>
+    <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="hero-title animate-fade-in">Fingalogy Limited</h1>
-            <p class="hero-subtitle animate-fade-in">Powering Technology and Energy Solutions</p>
-            <p class="hero-location animate-fade-in">Dublin, Ireland</p>
-            <a href="#about" class="btn btn-primary animate-fade-in">Learn More</a>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="section about">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">About Us</h2>
-            <div class="about-content">
-                <p class="animate-on-scroll">
-                    Located in <strong>Dublin, Ireland</strong>, <strong>Fingalogy Limited</strong> is committed to delivering innovative and sustainable solutions in the IT and electronics sectors. Our mission is to integrate green energy practices into our services, contributing to a more sustainable future.
-                </p>
-                <p class="animate-on-scroll">
-                    We specialize in <strong>IT and Electronics Services</strong>, with plans to expand into <strong>Battery and Energy Storage After-Sales Services</strong>, focusing on green energy solutions and sustainability.
-                </p>
+            <div class="hero-badge animate-float">🌱 Green Energy Solutions</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Powering</span> the Future<br>
+                of <span class="gradient-text">Technology</span> & <span class="gradient-text">Energy</span>
+            </h1>
+            <p class="hero-subtitle">
+                Leading provider of IT, Electronics & Battery Energy Storage solutions in Dublin, Ireland
+            </p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary btn-glow">
+                    <span>Explore Services</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Get in Touch</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
             </div>
         </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
     </section>
 
-    <!-- Why Choose Fingalogy Section -->
-    <section id="why-choose" class="section why-choose">
+    <!-- About Section -->
+    <section id="about" class="section about-section">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Why Choose Fingalogy</h2>
-            <div class="cards-grid">
-                <div class="card glass-card animate-on-scroll">
-                    <div class="card-icon">🌱</div>
-                    <h3>Commitment to Sustainability</h3>
-                    <p>The company is dedicated to integrating green energy practices into its services, contributing to a more sustainable future.</p>
+            <div class="section-header">
+                <span class="section-tag">Who We Are</span>
+                <h2 class="section-title">About <span class="gradient-text">Fingalogy</span></h2>
+                <p class="section-subtitle">Committed to delivering innovative and sustainable solutions</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card card-3d">
+                    <div class="card-icon">🏢</div>
+                    <h3>Our Company</h3>
+                    <p>Located in <strong>Dublin, Ireland</strong>, Fingalogy Limited is committed to delivering innovative and sustainable solutions in the IT and electronics sectors.</p>
                 </div>
-                <div class="card glass-card animate-on-scroll">
-                    <div class="card-icon">🔋</div>
-                    <h3>Energy Storage Services</h3>
-                    <p>Battery and energy storage after-sales services, providing commissioning, maintenance, and repair support.</p>
+                
+                <div class="about-card card-3d">
+                    <div class="card-icon">🎯</div>
+                    <h3>Our Mission</h3>
+                    <p>To integrate <strong>green energy practices</strong> into our services, contributing to a more sustainable future for businesses across Ireland.</p>
                 </div>
-                <div class="card glass-card animate-on-scroll">
-                    <div class="card-icon">💻</div>
-                    <h3>Comprehensive IT Services</h3>
-                    <p>Wide range of IT support, managed services, and electronics maintenance.</p>
+                
+                <div class="about-card card-3d">
+                    <div class="card-icon">🚀</div>
+                    <h3>Our Vision</h3>
+                    <p>To be the leading provider of <strong>IT, Electronics & Energy Storage</strong> solutions, driving innovation and sustainability.</p>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h4>Commitment to Sustainability</h4>
+                        <p>Dedicated to integrating green energy practices into all our services</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h4>Expert Team</h4>
+                        <p>Experienced professionals ensuring efficient and sustainable operations</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h4>Comprehensive Solutions</h4>
+                        <p>Wide range of IT support, managed services, and electronics maintenance</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h4>Energy Storage Expertise</h4>
+                        <p>Specialized in battery and energy storage after-sales services</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section services">
+    <section id="services" class="section services-section">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Our Services</h2>
+            <div class="section-header">
+                <span class="section-tag">What We Do</span>
+                <h2 class="section-title">Our <span class="gradient-text">Services</span></h2>
+                <p class="section-subtitle">Comprehensive solutions for your technology and energy needs</p>
+            </div>
+
             <div class="services-grid">
-                <div class="service-card animate-on-scroll">
+                <!-- Service 1: IT & Electronics -->
+                <div class="service-card service-card-large">
                     <div class="service-image">
-                        <img src="assets/images/worker-bus.svg" alt="Worker in high-vis gear working on blue bus electrical panel" loading="lazy">
+                        <img src="assets/images/worker-bus.svg" alt="IT and Electronics Services" loading="lazy">
+                        <div class="service-overlay"></div>
                     </div>
                     <div class="service-content">
                         <div class="service-icon">💻</div>
-                        <h3>Comprehensive IT and Electronics Services</h3>
-                        <p>We offer comprehensive IT support, managed services, and electronics maintenance to businesses across Ireland. Our team of experienced professionals ensures that your technology infrastructure operates efficiently and sustainably.</p>
-                        <ul>
-                            <li>Hardware maintenance and repair</li>
-                            <li>Software installation and support</li>
-                            <li>Network infrastructure setup</li>
-                            <li>Managed IT services</li>
+                        <h3>IT & Electronics Services</h3>
+                        <p>Comprehensive IT support, managed services, and electronics maintenance to businesses across Ireland. Our team ensures your technology infrastructure operates efficiently and sustainably.</p>
+                        <ul class="service-list">
+                            <li><span class="check-icon">✓</span> Hardware Maintenance & Repair</li>
+                            <li><span class="check-icon">✓</span> Software Installation & Support</li>
+                            <li><span class="check-icon">✓</span> Network Infrastructure Setup</li>
+                            <li><span class="check-icon">✓</span> Managed IT Services</li>
+                            <li><span class="check-icon">✓</span> 24/7 Technical Support</li>
                         </ul>
+                        <a href="#contact" class="btn btn-outline">Learn More →</a>
                     </div>
                 </div>
-                <div class="service-card animate-on-scroll">
+
+                <!-- Service 2: Energy Storage -->
+                <div class="service-card service-card-large">
                     <div class="service-image">
-                        <img src="assets/images/worker-equipment.svg" alt="Worker in high-vis gear on ladder working on green equipment with Fingalogy branding" loading="lazy">
+                        <img src="assets/images/worker-equipment.svg" alt="Battery and Energy Storage Services" loading="lazy">
+                        <div class="service-overlay"></div>
                     </div>
                     <div class="service-content">
                         <div class="service-icon">🔋</div>
-                        <h3>Battery and Energy Storage After-Sales Services</h3>
-                        <p>Recognising the growing importance of energy storage in the transition to renewable energy, we are preparing to provide after-sales support for battery energy storage systems (BESS). Our services will include commissioning, maintenance, and repair to ensure optimal performance and longevity of your energy storage investments.</p>
-                        <ul>
-                            <li>Commissioning of BESS systems</li>
-                            <li>Preventive maintenance programs</li>
-                            <li>Repair and troubleshooting</li>
-                            <li>Performance optimization</li>
+                        <h3>Battery & Energy Storage Services</h3>
+                        <p>Recognizing the growing importance of energy storage in the transition to renewable energy, we provide after-sales support for battery energy storage systems (BESS).</p>
+                        <ul class="service-list">
+                            <li><span class="check-icon">✓</span> BESS Commissioning</li>
+                            <li><span class="check-icon">✓</span> Preventive Maintenance Programs</li>
+                            <li><span class="check-icon">✓</span> Repair & Troubleshooting</li>
+                            <li><span class="check-icon">✓</span> Performance Optimization</li>
+                            <li><span class="check-icon">✓</span> System Monitoring & Analytics</li>
                         </ul>
+                        <a href="#contact" class="btn btn-outline">Learn More →</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="section stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🌍</div>
+                    <div class="stat-number" data-target="1000">0</div>
+                    <div class="stat-label">Tons CO₂ Saved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">MW Energy Managed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Industry Awards</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number" data-target="200">0</div>
+                    <div class="stat-label">Happy Clients</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Partners Section -->
-    <section id="partners" class="section partners">
+    <section id="partners" class="section partners-section">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Our Partners</h2>
+            <div class="section-header">
+                <span class="section-tag">Trusted By</span>
+                <h2 class="section-title">Our <span class="gradient-text">Partners</span></h2>
+                <p class="section-subtitle">Working with leading organizations across Ireland</p>
+            </div>
+
             <div class="partners-grid">
-                <div class="partner-logo animate-on-scroll">
-                    <img src="assets/images/partners/garda.svg" alt="An Garda Síochána" loading="lazy">
+                <div class="partner-card">
+                    <img src="assets/images/partners/garda.jpg" alt="An Garda Síochána" loading="lazy">
                 </div>
-                <div class="partner-logo animate-on-scroll">
-                    <img src="assets/images/partners/ucd.svg" alt="University College Dublin" loading="lazy">
+                <div class="partner-card">
+                    <img src="assets/images/partners/ucd.png" alt="University College Dublin" loading="lazy">
                 </div>
-                <div class="partner-logo animate-on-scroll">
-                    <img src="assets/images/partners/international-airlines.svg" alt="International Airlines" loading="lazy">
+                <div class="partner-card">
+                    <img src="assets/images/partners/ryanair.jpg" alt="Ryanair" loading="lazy">
                 </div>
-                <div class="partner-logo animate-on-scroll">
-                    <img src="assets/images/partners/ryanair.svg" alt="Ryanair" loading="lazy">
+                <div class="partner-card">
+                    <img src="assets/images/partners/aer-lingus.jpg" alt="Aer Lingus" loading="lazy">
                 </div>
-                <div class="partner-logo animate-on-scroll">
-                    <img src="assets/images/partners/aer-lingus.svg" alt="Aer Lingus" loading="lazy">
+                <div class="partner-card">
+                    <img src="assets/images/partners/international-airlines.jpg" alt="International Airlines" loading="lazy">
                 </div>
-                <div class="partner-logo animate-on-scroll">
-                    <img src="assets/images/partners/zellwood.svg" alt="Zellwood Limited" loading="lazy">
+                <div class="partner-card">
+                    <img src="assets/images/partners/zellwood.jpg" alt="Zellwood Limited" loading="lazy">
                 </div>
-                <div class="partner-logo animate-on-scroll">
-                    <img src="assets/images/partners/musgrave.svg" alt="Musgrave MarketPlace" loading="lazy">
+                <div class="partner-card">
+                    <img src="assets/images/partners/musgrave.jpg" alt="Musgrave MarketPlace" loading="lazy">
                 </div>
-                <div class="partner-logo animate-on-scroll">
-                    <img src="assets/images/partners/hendrick.svg" alt="Hendrick European" loading="lazy">
+                <div class="partner-card">
+                    <img src="assets/images/partners/hendrick.jpg" alt="Hendrick European" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact">
+    <section id="contact" class="section contact-section">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Contact Us</h2>
-            <div class="contact-content animate-on-scroll">
-                <p>Get in touch with us to learn more about our services and how we can help your business.</p>
+            <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-icon">📍</span>
-                        <span>Dublin, Ireland</span>
+                    <h2>Get in <span class="gradient-text">Touch</span></h2>
+                    <p>Ready to power your business with sustainable technology solutions? Contact us today.</p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Dublin, Ireland</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@fingalogy.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <span>info@fingalogy.com</span>
-                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -176,10 +326,43 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Fingalogy Limited. All rights reserved.</p>
-            <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-icon">⚡</div>
+                    <span class="logo-text">FINGALOGY</span>
+                    <p>Powering Technology and Energy Solutions</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">IT Services</a></li>
+                        <li><a href="#services">Electronics</a></li>
+                        <li><a href="#services">Energy Storage</a></li>
+                        <li><a href="#services">Maintenance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fingalogy Limited. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
 
     <script src="assets/js/main.js"></script>
 </body>
