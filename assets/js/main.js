@@ -330,27 +330,92 @@ class BackToTop {
   }
 }
 
-// Contact Form Handler
+// Contact Form Handler with EmailJS
 class ContactForm {
   constructor() {
     this.form = document.getElementById('contactForm');
     if (!this.form) return;
     
+    // EmailJS Configuration
+    this.config = {
+      publicKey: 'qVn_IKILaZEZca2RQ',
+      serviceId: 'service_d6it74r',
+      templateId: 'template_vyilr5u'
+    };
+    
+    this.submitBtn = document.getElementById('submitBtn');
+    this.btnText = document.getElementById('btnText');
+    this.btnLoader = document.getElementById('btnLoader');
+    this.formMessage = document.getElementById('formMessage');
+    
     this.init();
   }
   
   init() {
+    // Initialize EmailJS with your public key
+    if (typeof emailjs !== 'undefined') {
+      emailjs.init(this.config.publicKey);
+    }
+    
     this.form.addEventListener('submit', (e) => {
       e.preventDefault();
-      
-      // Get form data
-      const formData = new FormData(this.form);
-      const data = Object.fromEntries(formData);
-      
-      // Show success message (in production, send to server)
-      alert('Thank you for your message! We will get back to you soon.');
-      this.form.reset();
+      this.sendEmail();
     });
+  }
+  
+  async sendEmail() {
+    // Disable submit button
+    this.submitBtn.disabled = true;
+    this.btnText.style.display = 'none';
+    this.btnLoader.style.display = 'inline';
+    this.formMessage.style.display = 'none';
+    
+    try {
+      // Check if EmailJS is loaded
+      if (typeof emailjs === 'undefined') {
+        throw new Error('EmailJS library not loaded');
+      }
+      
+      // Send email using EmailJS
+      const response = await emailjs.sendForm(
+        this.config.serviceId,
+        this.config.templateId,
+        this.form
+      );
+      
+      console.log('Email sent successfully:', response);
+      
+      // Show success message
+      this.showMessage('Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
+      
+      // Reset form
+      this.form.reset();
+      
+    } catch (error) {
+      console.error('Email send failed:', error);
+      
+      // Show error message
+      this.showMessage('Sorry, there was an error sending your message. Please try again or contact us directly at info@fingalogy.com', 'error');
+    } finally {
+      // Re-enable submit button
+      this.submitBtn.disabled = false;
+      this.btnText.style.display = 'inline';
+      this.btnLoader.style.display = 'none';
+    }
+  }
+  
+  showMessage(message, type) {
+    this.formMessage.textContent = message;
+    this.formMessage.style.display = 'block';
+    this.formMessage.style.color = type === 'success' ? '#00ff88' : '#ff4444';
+    this.formMessage.style.padding = '1rem';
+    this.formMessage.style.borderRadius = '10px';
+    this.formMessage.style.background = type === 'success' ? 'rgba(0, 255, 136, 0.1)' : 'rgba(255, 68, 68, 0.1)';
+    
+    // Hide message after 5 seconds
+    setTimeout(() => {
+      this.formMessage.style.display = 'none';
+    }, 5000);
   }
 }
 

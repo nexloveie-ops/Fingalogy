@@ -270,24 +270,28 @@
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <div class="container">
+            <div class="section-header">
+                <h2>Get in <span class="gradient-text">Touch</span></h2>
+                <p class="section-subtitle">Ready to power your business with sustainable technology solutions? Contact us today.</p>
+            </div>
+            
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h2>Get in <span class="gradient-text">Touch</span></h2>
-                    <p>Ready to power your business with sustainable technology solutions? Contact us today.</p>
-                    
                     <div class="contact-items">
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Dublin, Ireland</p>
+                        <div class="contact-items-row">
+                            <div class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p><a href="tel:+353870003333" style="color: var(--text-dim); text-decoration: none;">+353 87 000 3333</a></p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">📧</div>
-                            <div>
-                                <h4>Email</h4>
-                                <p>info@fingalogy.com</p>
+                            <div class="contact-item">
+                                <div class="contact-icon">📧</div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:info@fingalogy.com" style="color: var(--text-dim); text-decoration: none;">info@fingalogy.com</a></p>
+                                </div>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -298,25 +302,42 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="offices-grid">
+                        <div class="office-card">
+                            <div class="office-icon">🇮🇪</div>
+                            <h4>Ireland Office</h4>
+                            <p>54/56 Main Street<br>Swords, Co Dublin<br>K67 C7W4, Ireland</p>
+                            <small style="color: var(--text-dim); opacity: 0.7;">Registration No.: 727008</small>
+                        </div>
+                        <div class="office-card">
+                            <div class="office-icon">🇬🇧</div>
+                            <h4>UK Office</h4>
+                            <p>Unit 7 Centrepoint<br>65 Montrose Avenue<br>Hillington Park, Glasgow<br>Scotland G52 4LA</p>
+                            <small style="color: var(--text-dim); opacity: 0.7;">Registration No.: 834501</small>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="from_name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" name="from_email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Subject" required>
+                            <input type="text" name="subject" placeholder="Subject" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">
-                            Send Message
+                        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                            <span id="btnText">Send Message</span>
+                            <span id="btnLoader" style="display: none;">Sending...</span>
                         </button>
+                        <div id="formMessage" style="margin-top: 1rem; text-align: center; display: none;"></div>
                     </form>
                 </div>
             </div>
@@ -364,6 +385,8 @@
         </svg>
     </button>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

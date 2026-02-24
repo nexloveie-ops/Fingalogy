@@ -683,6 +683,53 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-items-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.offices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.office-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s;
+}
+
+.office-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+}
+
+.office-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.office-card h4 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.office-card p {
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 1rem;
 }
 
 .contact-item {
@@ -931,6 +978,14 @@ body {
   .services-grid,
   .stats-grid,
   .partners-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .offices-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-items-row {
     grid-template-columns: 1fr;
   }
 }
